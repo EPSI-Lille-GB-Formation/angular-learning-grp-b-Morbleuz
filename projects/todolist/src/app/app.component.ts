@@ -9,12 +9,12 @@ import { TODOS } from './mock-todo';
   imports: [CommonModule, RouterOutlet],
   template : `
   <h1>Liste des choses à faire</h1>
-  <ul *ngFor="let t of todolist">
-    <li *ngIf="!t.isCompleted">
+  <ul >
+    <li *ngFor="let t of selectTodoFalse()">
       <article>
         <input type="checkbox">{{t.content}}
       </article>
-  </li>
+    </li>
     
   </ul>  
   `,
@@ -27,12 +27,14 @@ export class AppComponent {
 
   constructor(){
     console.table(this.todolist);
-
-    
   }
 
   selectTodo(id : number){
     return this.todolist[id].id
+  }
+
+  selectTodoFalse(){
+    return this.todolist.filter(t => !t.isCompleted)
   }
   
 }
