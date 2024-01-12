@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Todo } from '../todo';
 import { TodoService } from '../todo.service';
 import { Observable } from 'rxjs';
@@ -15,7 +15,7 @@ import { NgToastService } from "ng-angular-popup";
   <main class="container">
     <a id="loading"  *ngIf="loading" href="#" aria-busy="true">Récupération de la tâche…</a>
     <div *ngIf="!loading" >
-      <a href="/">Retour</a>
+      <a (click)="this.goToHomePage()">Page d'accueil</a>
       <h1>Edition de la tâche n° {{this.todo?.id}} </h1>
           <label for="title">
           Titre : 
@@ -33,7 +33,12 @@ import { NgToastService } from "ng-angular-popup";
   styleUrl: './edit-todo.component.css'
 })
 export class EditTodoComponent {
-  constructor(private route:ActivatedRoute,private todoService : TodoService,private toastService : NgToastService){}
+  constructor(
+    private route:ActivatedRoute,
+    private todoService : TodoService,
+    private toastService : NgToastService,
+    private router : Router
+    ){}
   id: number | undefined;
   @Input() todo : Todo | undefined = undefined;
   loading : boolean = true;
@@ -46,6 +51,9 @@ export class EditTodoComponent {
             complete : () => this.loading = false
           })
       }
+  }
+  goToHomePage(){
+    this.router.navigate(['']);
   }
   openSuccess(){
     this.toastService.success({detail:"Succès",summary:"Succès de la modification !", sticky:false, position:"bottomRight", duration: 3000})
