@@ -33,4 +33,24 @@ export class TodoService {
       })
     )
   } 
+
+  putTodo(todo : Todo,id : number) : Observable<any>{
+    return this.http.put<any>(this.todosUrl+"/"+id, todo);
+  }
+
+  postTodo(todo : Todo){
+    return this.http.post<any>(this.todosUrl,todo);
+  }
+  /*
+  postTodo(todo : Todo) : Observable<Todo>{
+    return this.http.post(this.todosUrl,todo).pipe(
+      tap(todo => console.log(todo)),
+      catchError(error => {
+        console.log(error);
+        return of();
+      })
+    )
+  }
+  */
+
 }

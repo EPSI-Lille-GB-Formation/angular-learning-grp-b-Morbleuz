@@ -4,13 +4,16 @@ import { RouterOutlet } from '@angular/router';
 import { TODOS } from './mock-todo';
 import { HoverBorderDirective } from './hover-border.directive';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { NgToastModule } from 'ng-angular-popup';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,HoverBorderDirective,TodoListComponent],
+  imports: [NgToastModule, CommonModule, RouterOutlet,HoverBorderDirective,TodoListComponent],
   template : `
-  <app-todolist/>
+  <router-outlet/>
+  <ng-toast></ng-toast> <!-- NEW WAY -->
   `,
   styles : []
 

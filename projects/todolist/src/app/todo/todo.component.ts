@@ -13,7 +13,7 @@ import { TODOS } from '../mock-todo';
   <article hover-border>
         <label><input type="checkbox" [checked]="todo!.isCompleted" (click)="changeState()">{{todo!.content}}
         <div class="option">
-          <a href="">Edit</a>
+          <a href="{{this.getUrlEdit()}}">Edit</a>
           <a (click)="this.delete()">Delete</a>
         </div>
       </label>
@@ -32,11 +32,15 @@ export class TodoComponent {
       this.todo.isCompleted = true;
     }
   }
+  getUrlEdit(){
+    return "/edit/"+this.todo?.id
+  }
 
   delete(){
     console.log("sup")
     if (this.todo) {
-      TODOS.splice(TODOS.indexOf((this.todo),1));
+      console.log("=>"+TODOS.indexOf(this.todo))
+      TODOS.splice(TODOS.indexOf(this.todo),1);
       console.log("suppresion ok ")
       console.table(TODOS)
     }

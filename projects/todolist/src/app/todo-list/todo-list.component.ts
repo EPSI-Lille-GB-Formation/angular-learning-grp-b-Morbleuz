@@ -15,15 +15,11 @@ import { Todo } from '../todo';
   <main class="container">
   <h1>Liste des choses à faire</h1>
   <h3>Voici la liste de toute les tâches :     
-    <span [ngSwitch]="showIsCompleted">
-        <div *ngSwitchCase="true">Terminé</div>
-        <div *ngSwitchCase="false">À faire</div>
-        <div *ngSwitchCase="undefined">Toutes</div>
-    </span>
   </h3>
   <a href="#" [class.secondary]="this.showIsCompleted==false" (click)="changeTodolist(false)" role="button">A faire</a>
   <a href="#" [class.secondary]="this.showIsCompleted==true" (click)="changeTodolist(true)" role="button">Terminé</a>
   <a href="#" [class.secondary]="this.showIsCompleted==undefined" (click)="changeTodolist(undefined)" role="button">Toutes</a>
+  <a href="/create" style="float: right;"role="button">Création d'une nouvelle tâche</a>
   <ng-container *ngFor="let t of this.todolist">
     <app-todo *ngIf="showIsCompleted == undefined || showIsCompleted==t.isCompleted" [value]="t"/>
   </ng-container>
@@ -44,9 +40,9 @@ export class TodoListComponent {
   todolist : Todo[] = [];
   todo : Todo | null = null;
   
-  ngOnInit(){
+  ngOnInit() : void {
     console.log(this.todoService.getTodoList().subscribe(todos => this.todolist = todos));
-    console.log(this.todoService.getTodoById(999).subscribe(todo => this.todo = todo));
+    console.log(this.todoService.getTodoById(2).subscribe(todo => this.todo = todo));
   }
 
   showIsCompleted : boolean | undefined = undefined;
