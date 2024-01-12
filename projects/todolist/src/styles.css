@@ -6,3 +6,7 @@
 .option a {
     margin: 10px;
 }
+
+.secondary{
+    background-color: grey;
+}

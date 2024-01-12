@@ -4,6 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { TODOS } from '../mock-todo';
 import { HoverBorderDirective } from '../hover-border.directive';
 import { TodoComponent } from '../todo/todo.component';
+import { TodoService } from '../todo.service';
+import { Todo } from '../todo';
 
 @Component({
   selector: 'app-todolist',
@@ -18,9 +20,10 @@ import { TodoComponent } from '../todo/todo.component';
         <div *ngSwitchCase="false">À faire</div>
         <div *ngSwitchCase="undefined">Toutes</div>
     </span>
-</h3>
-  <a href="#" (click)="changeTodolist(false)" role="button">A faire</a>
-  <a href="#" (click)="changeTodolist(true)" role="button">Terminé</a>
+  </h3>
+  <a href="#" [class.secondary]="this.showIsCompleted==false" (click)="changeTodolist(false)" role="button">A faire</a>
+  <a href="#" [class.secondary]="this.showIsCompleted==true" (click)="changeTodolist(true)" role="button">Terminé</a>
+  <a href="#" [class.secondary]="this.showIsCompleted==undefined" (click)="changeTodolist(undefined)" role="button">Toutes</a>
   <ng-container *ngFor="let t of this.todolist">
     <app-todo *ngIf="showIsCompleted == undefined || showIsCompleted==t.isCompleted" [value]="t"/>
   </ng-container>
@@ -38,23 +41,21 @@ import { TodoComponent } from '../todo/todo.component';
 })
 export class TodoListComponent {
 
-  todolist = TODOS;
+  todolist : Todo[] = [];
+  todo : Todo | null = null;
+  
+  ngOnInit(){
+    console.log(this.todoService.getTodoList().subscribe(todos => this.todolist = todos));
+    console.log(this.todoService.getTodoById(999).subscribe(todo => this.todo = todo));
+  }
 
   showIsCompleted : boolean | undefined = undefined;
 
-  constructor(){
-    console.table(this.todolist);
+  constructor(private todoService : TodoService){
   }
 
-  changeTodolist(bool:boolean){
-    if(this.showIsCompleted!=bool){
-      this.showIsCompleted = bool;
-      console.log("Affichage de la liste à l'état isCompleted = " + this.showIsCompleted)
-    }else{
-      console.log("Affichage de toute la liste")
-      this.showIsCompleted=undefined;
-    }
-    console.log(this.showIsCompleted)
+  changeTodolist(state:boolean | undefined){
+    this.showIsCompleted = state;
   }
   
 }
