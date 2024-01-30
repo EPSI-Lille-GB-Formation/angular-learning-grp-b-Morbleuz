@@ -1,0 +1,19 @@
+
+    <label for="email">Email address</label>
+    <input type="email"  [(ngModel)]="email"  id="email" name="email" placeholder="Email address" required>
+    
+    <label for="firstname">Fist Name</label>
+    <input type="text"  [(ngModel)]="firstname"  id="firstname" name="firstname" placeholder="First Name" required>
+       
+    <label for="lastname">Last Name</label>
+    <input type="text"  [(ngModel)]="lastname"  id="lastname" name="lastname" placeholder="Last Name" required>
+  
+    <label for="password">Password</label>
+    <input type="password" [(ngModel)]="password" id="password" name="password" placeholder="Your password" required>
+
+    <label for="confirm-password">Password</label>
+    <input type="password" [(ngModel)]="confirmPassword" id="confirm-password" name="confirm-password" placeholder="Confirm password" required>
+
+    <!-- Button -->
+    <button (click)="registerUser()">Submit</button>
+  

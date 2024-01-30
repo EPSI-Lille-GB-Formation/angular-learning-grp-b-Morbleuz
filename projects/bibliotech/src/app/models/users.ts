@@ -6,9 +6,9 @@ export class User{
         public firstname:string,
         public lastname : string,
         public email : string,
-        public password : Date|null,
-        public role : Date,
-        public books : Book[]
+        public password : string,
+        public role : string[] = ["ROLE_USER"],
+        public books : Book[] = []
     ){
     }
 }
