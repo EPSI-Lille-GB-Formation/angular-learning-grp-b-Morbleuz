@@ -1,1 +1,15 @@
-<p>home-component works!</p>
+<a href="#" *ngIf="!isLoad" class="center" aria-busy="true">Récupération des livres...</a>
+<div *ngIf="isLoad">
+    <div id="searchbar">
+        <input class="search" type="text" placeholder="Entrez un nom de livre" value="{{filter}}">
+    </div>
+    <div  *ngFor="let book of books">
+        <article>
+            <header>{{book.title}}</header>
+            {{book.resume}}
+            <footer>
+                <button>Lire le livre</button>
+            </footer>
+        </article>
+      </div>
+</div>

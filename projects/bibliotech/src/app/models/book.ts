@@ -7,7 +7,7 @@ export class Book{
         public title:string,
         public resume : string,
         public image : string,
-        public createdAt : Date|null,
+        public createdAt : Date,
         public updateAt : Date,
         public categories : Categories[],
         public users : User[]

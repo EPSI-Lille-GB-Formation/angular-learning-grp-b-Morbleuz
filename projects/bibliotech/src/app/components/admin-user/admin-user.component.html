@@ -1,0 +1,23 @@
+<a href="#" *ngIf="!isLoad" class="center" aria-busy="true">Récupération des utilisateurs...</a>
+<div *ngIf="isLoad">
+    <table>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">email</th>
+            <th scope="col">lastname</th>
+            <th scope="col">firstname</th>
+            <th scope="col">actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let user of users">
+            <th scope="row">{{user.id}}</th>
+            <td>{{user.email}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.firstname}}</td>
+            <td><a>🛠️</a><a (click)="deleteUser(user.id)">🗑️</a></td>
+        </tr>
+      </table>
+    
+</div>

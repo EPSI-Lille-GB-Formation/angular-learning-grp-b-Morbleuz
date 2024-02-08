@@ -1,18 +1,18 @@
 
-    <label for="email">Email address</label>
-    <input type="email"  [(ngModel)]="email"  id="email" name="email" placeholder="Email address" required>
+    <label for="email">Adresse mail :</label>
+    <input type="email"  [(ngModel)]="email"  id="email" name="email" placeholder="Email address"  [attr.aria-invalid]="validEmail" required>
     
-    <label for="firstname">Fist Name</label>
-    <input type="text"  [(ngModel)]="firstname"  id="firstname" name="firstname" placeholder="First Name" required>
+    <label for="firstname">Prénom : </label>
+    <input type="text"  [(ngModel)]="firstname"  id="firstname" name="firstname" placeholder="First Name"  aria-invalid="" required>
        
-    <label for="lastname">Last Name</label>
-    <input type="text"  [(ngModel)]="lastname"  id="lastname" name="lastname" placeholder="Last Name" required>
+    <label for="lastname">Nom de famille : </label>
+    <input type="text"  [(ngModel)]="lastname"  id="lastname" name="lastname" placeholder="Last Name"  aria-invalid="" required>
   
-    <label for="password">Password</label>
-    <input type="password" [(ngModel)]="password" id="password" name="password" placeholder="Your password" required>
+    <label for="password">Mot de passe : </label>
+    <input type="password" [(ngModel)]="password" (ngModelChange)="checkValidPassword($event)" id="password" name="password" placeholder="Your password" required [attr.aria-invalid]="validPassword" >
 
-    <label for="confirm-password">Password</label>
-    <input type="password" [(ngModel)]="confirmPassword" id="confirm-password" name="confirm-password" placeholder="Confirm password" required>
+    <label for="confirm-password">Confirmation mot de passe : </label>
+    <input type="password" [(ngModel)]="confirmPassword" (ngModelChange)="checkValidConfirmPassword($event)" id="confirm-password" name="confirm-password" placeholder="Confirm password" required [attr.aria-invalid]="confirmPassword" >
 
     <!-- Button -->
     <button (click)="registerUser()">Submit</button>

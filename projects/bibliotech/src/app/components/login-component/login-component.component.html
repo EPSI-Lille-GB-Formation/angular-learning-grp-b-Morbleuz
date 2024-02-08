@@ -1,8 +1,9 @@
 
-<label for="email">Email address</label>
-<input type="email" [(ngModel)]="email" id="email" name="email" placeholder="Email address" required>
+<label for="email">Adresse email :</label>
+<input type="email" [(ngModel)]="email" id="email" name="email" placeholder="example@site.fr" required>
 
-<label for="password">Password</label>
-<input type="password"  [(ngModel)]="password" id="password" name="password" placeholder="Your password" required>
+<label for="password">Mot de passe : </label>
+<input type="password"  [(ngModel)]="password" id="password" name="password" placeholder="motdepasse" required>
+<p>Vous n'avez pas encore de compte ? <a [routerLink]="['/register']">enregistrez-vous</a></p>
 <!-- Button -->
-<button type="button" (click)="onLogin()">Submit</button>
+<button type="button" (click)="onLogin()">Connexion</button>
