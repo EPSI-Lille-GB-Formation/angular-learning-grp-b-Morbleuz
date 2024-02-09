@@ -1,4 +1,5 @@
 import { Categories } from "./categories";
+import { Page } from "./page";
 import { User } from "./users";
 
 export class Book{
@@ -9,8 +10,9 @@ export class Book{
         public image : string,
         public createdAt : Date,
         public updateAt : Date,
-        public categories : Categories[],
-        public users : User[]
+        public categoriesId : number[],
+        public usersId : number[],
+        public pagesId : number[]
     ){
         this.createdAt = new Date()
     }

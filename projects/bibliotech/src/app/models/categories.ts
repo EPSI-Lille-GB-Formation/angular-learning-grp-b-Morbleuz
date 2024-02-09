@@ -4,7 +4,7 @@ export class Categories{
     constructor(
         public id: number,
         public label : string,
-        public books : Book[] = []
+        public booksId : number[] = []
     ){
     }
 }

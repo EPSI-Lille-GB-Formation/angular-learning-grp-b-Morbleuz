@@ -7,8 +7,9 @@
         <article>
             <header>{{book.title}}</header>
             {{book.resume}}
+            <p>Nombre de pages : {{book.pagesId.length}}</p>
             <footer>
-                <button>Lire le livre</button>
+                <button (click)="goToBook(book.id)">Lire le livre</button>
             </footer>
         </article>
       </div>

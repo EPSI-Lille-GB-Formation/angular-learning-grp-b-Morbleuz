@@ -7,7 +7,7 @@ export class Page{
         public content : string,
         public createdAt : Date,
         public updateAt : Date|null,
-        public book : Book
+        public bookId : number
     ){}
     
 }

@@ -5,16 +5,16 @@ export const CATEGORIES : Categories[] = [
     {
         id: 1,
         label : 'Action',
-        books : []
+        booksId : []
     },
     {
         id: 2,
         label : 'Horreur',
-        books : []
+        booksId : []
     },
     {
         id: 3,
         label : 'Romance',
-        books : []
+        booksId : []
     }
 ]

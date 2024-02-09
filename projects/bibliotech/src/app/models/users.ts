@@ -8,7 +8,7 @@ export class User{
         public email : string,
         public password : string,
         public role : string[] = ["ROLE_USER"],
-        public books : Book[] = []
+        public booksId : number[] = []
     ){
     }
 }

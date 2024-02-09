@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { AdminUserComponent } from './components/admin-user/admin-user.component';
+import { BookComponent } from './components/book/book.component';
 export const routes: Routes = [
     { path: '', component: HomeComponentComponent },
     { path: 'login', component: LoginComponentComponent },
@@ -13,8 +14,5 @@ export const routes: Routes = [
     { path: 'profil', component: ProfileComponent },
     { path: 'admin', component: AdminPanelComponent },
     { path: 'admin/user', component: AdminUserComponent },
-
-
-
-
+    { path: 'book/:id', component: BookComponent },
 ];

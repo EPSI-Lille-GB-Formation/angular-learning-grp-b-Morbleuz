@@ -27,7 +27,7 @@ export class UserService {
   }
 
   update(user : User) : Observable<User>{
-    return this.http.patch<User>(`${this.userUrl}/${user.id}`, user)
+    return this.http.put<any>(`${this.userUrl}/${user.id}`, user)
   }
 
   delete(id : number) {

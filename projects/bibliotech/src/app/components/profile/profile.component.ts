@@ -5,6 +5,7 @@ import { Utils } from '../../utils';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { User } from '../../models/users';
+import { last } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -29,6 +30,7 @@ export class ProfileComponent {
   public lastname = "";
 
   public user : undefined | User = undefined;
+  
   ngOnInit() {
     let id = Utils.getId();
     if(id == null){
@@ -38,7 +40,6 @@ export class ProfileComponent {
       this.userService.getUser(id).subscribe(
         user => {
           this.user = user;
-          console.table(this.user)
           this.firstname = user["firstname"];
           this.lastname = user["lastname"];
         }
@@ -50,17 +51,23 @@ export class ProfileComponent {
   updateProfil(){
     if(this.user){
       let id = this.user.id;
+      this.user.firstname = this.firstname;
+      this.user.lastname = this.lastname;
       this.userService.update(this.user).subscribe(
-        user => {
-          console.log(user)
-          this.userService.getUser(id).subscribe(
-            user => {
-              this.user = user;
-              this.firstname = user["firstname"];
-              this.lastname = user["lastname"];
-              console.log("ok")
-            }
-          )
+        {
+          next : (result) => {
+            this.userService.getUser(id).subscribe(
+              user => {
+                Utils.openSuccess(this.toastService,"Modification correctement effectué")
+                this.user = user;
+                this.firstname = user["firstname"];
+                this.lastname = user["lastname"];
+              }
+            )
+          },
+          error : (err) => {
+            console.error(err);
+          }
         }
       )
 

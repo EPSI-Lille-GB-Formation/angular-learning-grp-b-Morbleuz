@@ -8,7 +8,7 @@ export const PAGES : Page[] = [
         content : 'content',
         createdAt : new Date('22-10-2003'),
         updateAt : null ,
-        book : BOOKS[0]
+        bookId : 1
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ export const PAGES : Page[] = [
         content : 'content',
         createdAt : new Date('22-10-2003'),
         updateAt : null ,
-        book : BOOKS[0]
+        bookId : 1
     },
     {
         id: 3,
@@ -24,6 +24,6 @@ export const PAGES : Page[] = [
         content : 'content',
         createdAt : new Date('22-10-2003'),
         updateAt : null ,
-        book : BOOKS[0]
+        bookId : 1
     },
 ]
