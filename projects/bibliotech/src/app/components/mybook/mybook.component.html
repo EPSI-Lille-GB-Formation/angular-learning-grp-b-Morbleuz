@@ -1,0 +1,23 @@
+<a href="#" *ngIf="!isLoad" class="center" aria-busy="true">Récupération des livres...</a>
+<div *ngIf="isLoad">
+    <table>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">title</th>
+            <th scope="col">createdAt</th>
+            <th scope="col">updateAt</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let book of this.books">
+            <th scope="row">{{book.id}}</th>
+            <td>{{book.title}}</td>
+            <td>{{book.createdAt}}</td>
+            <td>{{book.updateAt}}</td>
+            <td><a>🛠️</a><a (click)="deleteBook(book.id)">🗑️</a></td>
+        </tr>
+      </table>
+    
+</div>

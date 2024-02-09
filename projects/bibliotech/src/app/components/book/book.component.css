@@ -1,0 +1,9 @@
+.pagecontent{
+    background-color: rgba(233, 232, 233, 0.8);
+    padding: 20px;
+    height: 50vh;
+}
+.secondary:hover{
+    cursor: pointer;
+    filter: brightness(50%);
+}

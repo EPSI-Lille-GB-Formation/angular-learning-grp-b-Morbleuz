@@ -6,11 +6,14 @@ import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { User } from '../../models/users';
 import { last } from 'rxjs';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,RouterOutlet,RouterLink],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })

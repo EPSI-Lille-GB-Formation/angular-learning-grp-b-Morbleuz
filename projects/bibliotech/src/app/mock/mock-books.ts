@@ -12,7 +12,7 @@ export const BOOKS : Book[] = [
         createdAt : new Date('22-10-2003'),
         updateAt : new Date('25-12-2004'),
         categoriesId : [1],
-        usersId : [1],
-        pagesId : [1,2]
+        usersId : [1,2],
+        pagesId : [1,2,3,4,5,6]
     }
 ]

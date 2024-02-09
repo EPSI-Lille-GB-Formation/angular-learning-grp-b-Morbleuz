@@ -1,0 +1,19 @@
+<a class="center" href="#" *ngIf="!isLoad" class="center" aria-busy="true">Récupération des informations...</a>
+<div class="page" *ngIf="isLoad" >
+    <h2>{{book?.title}}</h2>
+    <p class="pagecontent">
+        {{selectPage?.content}}
+    </p>
+    <nav>
+        <ul>
+          <li><a (click)="previousPage()"  [hidden]="pageNumber == 0"  class="secondary">Page précédente</a></li>
+        </ul>
+        <ul>
+          <li><strong>{{pageNumber+1}}/{{pages.length}}</strong></li>
+        </ul>
+        <ul>
+          <li><a (click)="nextPage()" [hidden]="pageNumber == pages.length-1" class="secondary">Page suivante</a></li>
+        </ul>
+      </nav>
+
+</div>

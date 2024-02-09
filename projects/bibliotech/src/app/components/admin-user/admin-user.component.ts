@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './admin-user.component.html',
-  styleUrl: './admin-user.component.css'
+  styleUrls: [
+    './admin-user.component.css',
+    '../../app.component.css'
+  ]
 })
 export class AdminUserComponent {
   public isLoad = false;

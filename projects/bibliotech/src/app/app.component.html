@@ -6,7 +6,6 @@
     </ul>
     <ul>
       <li><a [routerLink]="['/']" >Home</a></li>
-      <li><a href="#">Link</a></li>
       <li *ngIf="isAdmin"><a [routerLink]="['/admin']" role="button">Admin</a></li>
       <li *ngIf="isAuth"><a [routerLink]="['/profil']" role="button">Mon profil</a></li>
       <li *ngIf="isAuth" (click)="disconnect()"><a>❌</a></li>
