@@ -1,0 +1,19 @@
+<a class="center" *ngIf="!isLoad" class="center" aria-busy="true">Récupération des catégories...</a>
+<div *ngIf="isLoad">
+    <table>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">label</th>
+            <th scope="col">actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let cat of categories">
+            <th scope="row">{{cat.id}}</th>
+            <td>{{cat.label}}</td>
+            <td><a>🛠️</a><a (click)="deleteUser(cat.id)">🗑️</a></td>
+        </tr>
+      </table>
+    
+</div>
