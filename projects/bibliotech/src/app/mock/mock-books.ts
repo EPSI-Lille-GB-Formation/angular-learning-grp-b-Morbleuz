@@ -9,8 +9,8 @@ export const BOOKS : Book[] = [
         title:"Livre 1",
         resume : "Mon super résumé",
         image : "/folder",
-        createdAt : new Date('22-10-2003'),
-        updateAt : new Date('25-12-2004'),
+        createdAt : new Date(2003,10,22),
+        updateAt : null,
         categoriesId : [1],
         usersId : [1,2],
         pagesId : [1,2,3,4,5,6]

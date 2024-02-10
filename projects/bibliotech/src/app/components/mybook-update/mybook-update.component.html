@@ -1,0 +1,19 @@
+<a class="center" *ngIf="!isLoad" class="center" aria-busy="true">Récupération des catégories...</a>
+<div *ngIf="isLoad">
+    <h2>Que souhaitez-vous faire ?</h2>
+    <ul>
+        <li><a (click)="goToPages()">Gérer les pages du livre</a></li>
+    </ul>
+
+    <h2>Modifiers ses informations</h2>
+    
+    <a href="">Gérer les pages du livres</a>
+
+    <label for="email">Titre :</label>
+    <input type="email" [(ngModel)]="title" id="label" name="label">
+
+    <label for="email">Resumé :</label>
+    <input type="email" [(ngModel)]="resume" id="label" name="label">
+    
+    <button type="button" (click)="updateBook()">Enregistrez</button>
+</div>

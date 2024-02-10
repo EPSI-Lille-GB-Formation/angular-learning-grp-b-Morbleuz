@@ -16,7 +16,7 @@
             <td>{{book.title}}</td>
             <td>{{book.createdAt}}</td>
             <td>{{book.updateAt}}</td>
-            <td><a>🛠️</a><a (click)="deleteBook(book.id)">🗑️</a></td>
+            <td><a (click)="goToBook(book.id)">🛠️</a><a (click)="deleteBook(book.id)">🗑️</a></td>
         </tr>
       </table>
     

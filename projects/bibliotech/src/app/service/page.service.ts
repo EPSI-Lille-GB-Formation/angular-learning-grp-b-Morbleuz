@@ -19,7 +19,7 @@ export class PageService {
   }
 
   getAll(){
-    return this.http.get<any>(this.url);
+    return this.http.get<Page[]>(this.url);
   }
 
   get(id : number) : Observable<Page>{

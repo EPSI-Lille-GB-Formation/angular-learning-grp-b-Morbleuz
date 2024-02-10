@@ -10,6 +10,8 @@ import { BookComponent } from './components/book/book.component';
 import { MybookComponent } from './components/mybook/mybook.component';
 import { AdminCategoryComponent } from './components/admin-category/admin-category.component';
 import { AdminUpdateCategoryComponent } from './components/admin-update-category/admin-update-category.component';
+import { MybookUpdateComponent } from './components/mybook-update/mybook-update.component';
+import { MybookPagesComponent } from './components/mybook-pages/mybook-pages.component';
 export const routes: Routes = [
     { path: '', component: HomeComponentComponent },
     { path: 'login', component: LoginComponentComponent },
@@ -21,4 +23,8 @@ export const routes: Routes = [
     { path: 'admin/category/:id', component: AdminUpdateCategoryComponent},
     { path: 'book/:id', component: BookComponent },
     { path: 'mybooks', component: MybookComponent },
+    { path: 'mybooks/:id', component: MybookUpdateComponent },
+    { path: 'mybooks/:id/pages', component: MybookPagesComponent },
+
+
 ];

@@ -1,0 +1,25 @@
+<a href="#" *ngIf="!isLoad" class="center" aria-busy="true">Récupération des livres...</a>
+<div *ngIf="isLoad">
+    <table>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">title</th>
+            <th scope="col">content</th>
+            <th scope="col">updateAt</th>
+            <th scope="col">createdAt</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let page of this.pages">
+            <th scope="row">{{page.id}}</th>
+            <td>{{page.title}}</td>
+            <td>{{page.content.substr(0,20)}}...</td>
+            <td>{{page.updateAt}}</td>
+            <td>{{page.createdAt}}</td>
+            <td><a (click)="goToPage(page.id)">🛠️</a><a (click)="deleteBook(page.id)">🗑️</a></td>
+        </tr>
+      </table>
+    
+</div>

@@ -9,7 +9,7 @@ export class Book{
         public resume : string,
         public image : string,
         public createdAt : Date,
-        public updateAt : Date,
+        public updateAt : Date | null,
         public categoriesId : number[],
         public usersId : number[],
         public pagesId : number[]

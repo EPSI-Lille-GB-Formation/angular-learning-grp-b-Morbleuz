@@ -30,6 +30,10 @@ export class MybookComponent {
   ){
 
   }
+
+  goToBook(id : number){
+    this.router.navigateByUrl("mybooks/"+id);
+  }
   ngOnInit(){
     //Message d'erreur + retour à la home page
     if(!Utils.isAuth()){
