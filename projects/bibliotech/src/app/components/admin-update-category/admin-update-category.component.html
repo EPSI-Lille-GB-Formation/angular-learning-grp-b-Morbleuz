@@ -1,0 +1,9 @@
+<a class="center" *ngIf="!isLoad" class="center" aria-busy="true">Récupération des catégories...</a>
+<div *ngIf="isLoad">
+    <h2>Modifiers ses informations</h2>
+
+    <label for="email">Nom :</label>
+    <input type="email" [(ngModel)]="label" id="label" name="label">
+    
+    <button type="button" (click)="updateCategories()">Enregistrez</button>
+</div>

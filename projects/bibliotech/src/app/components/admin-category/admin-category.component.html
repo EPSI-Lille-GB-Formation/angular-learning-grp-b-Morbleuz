@@ -1,5 +1,13 @@
 <a class="center" *ngIf="!isLoad" class="center" aria-busy="true">Récupération des catégories...</a>
 <div *ngIf="isLoad">
+    <!-- Grid -->
+    <h2>Création d'une nouvelle catégorie :</h2>
+      <label for="Label">
+        Label :
+        <input [ngModel]="label" type="text" id="firstname" name="firstname" placeholder="Label Name">
+      </label>
+      <button (click)="createNewCategory()">Créer</button>
+    <h2>Gérer les catégories :</h2>
     <table>
         <thead>
           <tr>
@@ -12,7 +20,7 @@
         <tr  *ngFor="let cat of categories">
             <th scope="row">{{cat.id}}</th>
             <td>{{cat.label}}</td>
-            <td><a>🛠️</a><a (click)="deleteUser(cat.id)">🗑️</a></td>
+            <td><a (click)="goToCategory(cat.id)">🛠️</a><a (click)="deleteUser(cat.id)">🗑️</a></td>
         </tr>
       </table>
     

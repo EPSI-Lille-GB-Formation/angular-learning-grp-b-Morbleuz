@@ -9,6 +9,7 @@ import { AdminUserComponent } from './components/admin-user/admin-user.component
 import { BookComponent } from './components/book/book.component';
 import { MybookComponent } from './components/mybook/mybook.component';
 import { AdminCategoryComponent } from './components/admin-category/admin-category.component';
+import { AdminUpdateCategoryComponent } from './components/admin-update-category/admin-update-category.component';
 export const routes: Routes = [
     { path: '', component: HomeComponentComponent },
     { path: 'login', component: LoginComponentComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
     { path: 'admin', component: AdminPanelComponent },
     { path: 'admin/user', component: AdminUserComponent },
     { path: 'admin/category', component: AdminCategoryComponent},
+    { path: 'admin/category/:id', component: AdminUpdateCategoryComponent},
     { path: 'book/:id', component: BookComponent },
     { path: 'mybooks', component: MybookComponent },
 ];
